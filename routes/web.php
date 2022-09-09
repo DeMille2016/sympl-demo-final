@@ -14,3 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\Controller::class,'index']);
+
+Route::post('/saveConnection',[\App\Http\Controllers\Controller::class,'post'])->name('saveConnection');
+
