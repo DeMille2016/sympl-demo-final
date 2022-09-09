@@ -11,11 +11,14 @@ class User extends Model
     protected $fillable = ['name'];
 
 
-
     use HasFactory;
 
     public function projects()
     {
         return $this->belongsToMany(Project::class);
+    }
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
     }
 }

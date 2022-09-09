@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Project;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -24,13 +25,28 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        foreach (Project::all() as $project){
-            $users = User::all()->random(rand(1,3))->pluck('id');
-            $project->users()->attach($users);
-        }
-        foreach (User::all() as $project){
-            $projects = Project::all()->random(rand(1,3))->pluck('id');
-            $project->projects()->attach($projects);
-        }
+      /*  $project = Project::all()->where('name','Project 1')->first();
+        $users = User::all()->where('fname','Lindsey')->pluck('id');
+        $project->users()->attach($users);
+
+        $project = Project::all()->where('name','Project 3')->first();
+        $users = User::all()->where('fname','Lindsey')->pluck('id');
+        $project->users()->attach($users);
+
+        $project = Project::all()->where('name','Project 2')->first();
+        $users = User::all()->where('fname','Tom')->pluck('id');
+        $project->users()->attach($users);*/
+        $role = Role::all()->where('name','Director')->first();
+        $users = User::all()->where('fname','Tom')->pluck('id');
+        $role->users()->attach($users);
+        $role = Role::all()->where('name','Product Development')->first();
+        $users = User::all()->where('fname','Tom')->pluck('id');
+        $role->users()->attach($users);
+        $role = Role::all()->where('name','Front-End Developer')->first();
+        $users = User::all()->where('fname','Lindsey')->pluck('id');
+        $role->users()->attach($users);
+        $role = Role::all()->where('name','Designer')->first();
+        $users = User::all()->where('fname','Courtney')->pluck('id');
+        $role->users()->attach($users);
     }
 }

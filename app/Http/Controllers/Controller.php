@@ -13,7 +13,7 @@ class Controller extends BaseController
 {
     public function index()
     {
-        $users = User::with('projects')->get();
+        $users = User::with('projects','roles')->get();
         return view('welcome',compact('users'));
     }
 }

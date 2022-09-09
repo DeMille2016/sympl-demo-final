@@ -18,9 +18,9 @@ class ProjectSeeder extends Seeder
      */
     public function run()
     {
-        for ($x = 0; $x <= 10; $x++) {
+        for ($x = 1; $x <= 5; $x++) {
             DB::table('projects')->insert([
-                'name' => 'project' . Str::random(3)
+                'name' => 'Project ' . $x
             ]);
         }
 
