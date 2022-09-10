@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-      /*  $project = Project::all()->where('name','Project 1')->first();
+        $project = Project::all()->where('name','Project 1')->first();
         $users = User::all()->where('fname','Lindsey')->pluck('id');
         $project->users()->attach($users);
 
@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
 
         $project = Project::all()->where('name','Project 2')->first();
         $users = User::all()->where('fname','Tom')->pluck('id');
-        $project->users()->attach($users);*/
+        $project->users()->attach($users);
         $role = Role::all()->where('name','Director')->first();
         $users = User::all()->where('fname','Tom')->pluck('id');
         $role->users()->attach($users);
@@ -48,5 +48,6 @@ class DatabaseSeeder extends Seeder
         $role = Role::all()->where('name','Designer')->first();
         $users = User::all()->where('fname','Courtney')->pluck('id');
         $role->users()->attach($users);
+
     }
 }

@@ -27,6 +27,9 @@
             </select>
             <button type="submit" class="ml-4 flex-shrink-0 px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Link</button>
         </form>
+        @if($errors != '[]')
+            <span class="bg-red-800">{{$errors}}</span>
+        @endif
     </div>
     <div class="mt-10">
         <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Team members + projects</h3>
